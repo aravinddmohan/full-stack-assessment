@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Detail</title>
+</head>
+<body>
+
+    <h2>Employee Details</h2>
+
+    <p>
+        <strong>ID:</strong> {{ employee.id }}
+    </p>
+
+    <p>
+        <strong>Name:</strong> {{ employee.name }}
+    </p>
+
+    <p>
+        <strong>Email:</strong> {{ employee.email }}
+    </p>
+
+    <p>
+        <strong>Department:</strong> {{ employee.department }}
+    </p>
+
+    <p>
+        <strong>Salary:</strong> {{ employee.salary }}
+    </p>
+
+    <p>
+        <strong>Status:</strong> {{ employee.get_status_display }}
+    </p>
+
+    <p>
+        <a href="{% url 'employee_list' %}">Back to Employee List</a>
+    </p>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employees</title>
+</head>
+<body>
+
+<h2>Active Employees</h2>
+
+<a href="{% url 'add_employee' %}">➕ Add Employee</a>
+
+<ul>
+    {% for emp in employees %}
+        <li>
+            {{ emp.name }} | {{ emp.department }} | {{ emp.salary }}
+
+            <a href="{% url 'update_employee' emp.id %}">✏️ Edit</a>
+
+            <form method="POST" action="{% url 'delete_employee' emp.id %}" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">❌ Delete</button>
+            </form>
+        </li>
+    {% empty %}
+        <li>No active employees</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

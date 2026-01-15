@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Employee</title>
+</head>
+<body>
+
+<h2>Update Employee</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    Name:
+    <input type="text" name="name" value="{{ employee.name }}"><br><br>
+
+    Email:
+    <input type="email" name="email" value="{{ employee.email }}"><br><br>
+
+    Department:
+    <input type="text" name="department" value="{{ employee.department }}"><br><br>
+
+    Salary:
+    <input type="number" name="salary" value="{{ employee.salary }}"><br><br>
+
+    <button type="submit">Update</button>
+</form>
+
+<a href="{% url 'employee_list' %}">⬅ Back</a>
+
+</body>
+</html>
